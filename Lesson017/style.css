@@ -1,0 +1,171 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    width: 100%;
+    height: 80px;
+    background: #444;
+    position: sticky;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    z-index: 4;
+}
+
+nav {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ddd;
+    
+}
+
+.menu_bar {
+    width: 20px;
+    height: 20px;
+    display: none;
+}
+.menu_bar span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    margin-bottom: 3px;
+    background-color: #ddd;
+    border-radius: 3px;
+}
+#menu {
+    display: none;
+}
+.colletion {
+    display: flex;
+    width: 40%;
+    justify-content: space-between;
+    list-style: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.title {
+    color: red;
+    font-style: italic;
+}
+
+.width {
+    width: 100%;
+    height: 50px;
+    background-color: royalblue;
+}
+
+.container 
+{
+    width: 70%;
+    margin: auto;
+    border: 1px solid red;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 20px;
+}
+
+.box {
+    background: purple;
+    height: 200px;
+}
+
+.main {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 280px;
+    height: 300px;
+    background-color: salmon;
+    margin: 10px;
+}
+
+
+
+@media screen and (min-width:1000px){
+    .title{
+        color: springgreen;
+    }
+    .width {
+        background-color: tomato;
+    }
+}
+
+@media screen and (max-width:800px) {
+    .title{
+        color: royalblue;
+        font-size: 44px;
+        font-style: oblique;
+    }
+    .width {
+        background-color: salmon;
+        width: 80%;
+        margin: auto;
+    }
+    .container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+}
+
+@media screen and (max-width: 600px) {
+    .width {
+        width: 50%;
+        background-color: slateblue;
+    }
+    .container {
+        width: 90%;
+        grid-template-columns: 1fr;
+    }
+    .colletion {
+        position: fixed;
+        top: 80px;
+        left: -100%;
+        width: 100%;
+        height: 100vh;
+        background: #444;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        z-index: 2;
+        transition: .3s;
+    }
+    .colletion .team {
+        padding: 20px 0;
+    }
+
+    .menu_bar {
+        display: block;
+        position: relative;
+        z-index: 3;
+    }
+
+    #menu:checked ~ .colletion {
+        left: 0;
+    }
+}
